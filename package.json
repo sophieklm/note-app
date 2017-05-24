@@ -1,0 +1,24 @@
+{
+  "name": "note-app",
+  "version": "1.0.0",
+  "description": "single page note app",
+  "main": "note-controller.js",
+  "dependencies": {
+    "http-server": "^0.10.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node node_modules/http-server/bin/http-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sophieklm/note-app.git"
+  },
+  "author": "sophie mann",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sophieklm/note-app/issues"
+  },
+  "homepage": "https://github.com/sophieklm/note-app#readme"
+}
