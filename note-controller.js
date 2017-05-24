@@ -1,11 +1,13 @@
 (function(exports) {
 
-function changeText() {
+function createList() {
+  list = new List();
+  view = new View(list);
+  html = view.createListHTML();
   element = document.getElementById("app");
-  console.log(element);
-  element.innerHTML = "Howdy";
+  element.innerHTML = html;
 }
 
-changeText();
+createList();
 
 })(this);
