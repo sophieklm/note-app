@@ -1,13 +1,15 @@
 (function(exports) {
 
-function createList() {
-  list = new List();
-  view = new View(list);
-  html = view.createListHTML();
-  element = document.getElementById("app");
-  element.innerHTML = html;
-}
+  function Controller(list = new List()) {
+     this.list = list;
+     this.view = new View(this.list);
+  }
 
-createList();
+  Controller.prototype.getHTMLView = function(){
+    html = this.view.createListHTML();
+    element = document.getElementById("list");
+    element.innerHTML = html;
+  };
 
+  exports.Controller = Controller;
 })(this);
