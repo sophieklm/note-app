@@ -1,7 +1,7 @@
 (function(exports) {
   'use strict';
 
-  function View(list){
+  function View(list = new List()){
     this.list = list;
   }
 
