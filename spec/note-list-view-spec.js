@@ -12,18 +12,25 @@ function testViewHandlesEmptyList() {
 function testViewReturnsOneNoteAsString() {
   var html = "<ul><li><div>Thing</div></li></ul>"
   list.addNote(string);
-  assert.isTrue(view.createListHTML(), html);
+  assert.isEq(view.createListHTML(), html);
 }
 
 function testViewReturnsTwoNotesAsString() {
-  var list = new List();
-  var view = new View(list);
+  var view = new View();
   var html = "<ul><li><div>Thing</div></li><li><div>Thing</div></li></ul>";
-  list.addNote(string);
-  list.addNote(string);
-  assert.isTrue(view.createListHTML(), html);
+  view.list.addNote(string);
+  view.list.addNote(string);
+  assert.isEq(view.createListHTML(), html);
+}
+
+function testViewShowsOnly20Chars(){
+  var view = new View();
+  var html = "<ul><li><div>This is a string lon</div></li></ul>";
+  view.list.addNote("This is a string longer than 20 chars");
+  assert.isEq(view.createListHTML(), html);
 }
 
 testViewHandlesEmptyList();
 testViewReturnsOneNoteAsString();
 testViewReturnsTwoNotesAsString();
+testViewShowsOnly20Chars();
