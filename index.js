@@ -4,6 +4,7 @@ function init() {
   controller.list.addNote("Note1");
   controller.list.addNote("Note2");
   controller.getHTMLView();
+  controller.makeURLChangeShowNoteForPage();
 
 }
 
