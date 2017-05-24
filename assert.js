@@ -20,4 +20,13 @@ var assert = {
     }
     console.log('isEq assertion passed');
   },
+
+  isArray: function(assertionToCheck) {
+    if(Object.prototype.toString.call(assertionToCheck) !== '[object Array]' ) {
+      throw new Error('Failed: ' + assertionToCheck + ' is not an array');
+    } else {
+      console.log('isArray assertion passed');
+    }
+  }
+
 };
