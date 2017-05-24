@@ -1,10 +1,16 @@
 'use scrict';
 
-var controller = new Controller();
-
-function testControllerCreatesListView() {
-  controller.list.addNote("note");
-  console.log(controller.getHTMLView());
+function testControllerInitialisesWithList() {
+  var controller = new Controller();
+  assert.isArray(controller.list.getNotes());
 }
 
-// testControllerCreatesListView();
+testControllerInitialisesWithList();
+
+function testControllerCreatesView() {
+  var controller = new Controller();
+  controller.list.addNote("Note");
+  assert.isEq(controller.view.createListHTML(),"<ul><li><div>Note</div></li></ul>");
+}
+
+testControllerCreatesView();
