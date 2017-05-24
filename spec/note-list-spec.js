@@ -1,3 +1,5 @@
+'use strict';
+
 var list = new List();
 
 function testNoteListHoldsNotes() {
@@ -18,3 +20,12 @@ function testListStoresSingleNote(){
   }
 
 testListStoresSingleNote();
+
+function testListStoresMultipleNotes() {
+  var list = new List();
+  list.addNote("string1");
+  list.addNote("string2");
+  assert.isTrue(list.getNotes()[1].getText() === "string2");
+}
+
+testListStoresMultipleNotes();
